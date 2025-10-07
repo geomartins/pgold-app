@@ -1,16 +1,86 @@
-# pgold
+# 🪙 PGold Flutter App
 
-Pgold Assessment App
+PGold is a modular Flutter application designed with scalability and maintainability in mind.  
+It follows a **clean architecture** approach — organizing features into independent modules (e.g., `auth`, `dashboard`, and `guest`) with dedicated controllers, bindings, models, services, and widgets.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📁 Project Structure
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Below is a detailed overview of the `lib/` directory structure:
+```
+lib/
+│
+│ main.dart # App entry point
+│ store.dart # Global state or dependency store
+│
+├───abstracts
+│ pallete_base.dart # Base color palette abstraction
+│
+├───config
+│ enumefy.dart # Enums and constants
+│ palletefy.dart # Theme colors and material palette
+│ routefy.dart # Centralized route definitions
+│ themefy.dart # Theme configuration (light/dark modes)
+│
+├───middlewares
+│ is_auth.dart # Route middleware for auth validation
+│
+├───modules
+│ ├───auth # Handles user authentication (login/register)
+│ │ │ auth_routes.dart
+│ │ │
+│ │ ├───bindings # Bind controllers and dependencies
+│ │ ├───controllers # Business logic (Login, Register)
+│ │ ├───editors # Editors and text field handlers
+│ │ ├───models # User data models
+│ │ ├───screens # Login and Registration UI
+│ │ ├───services # Auth-related network services
+│ │ ├───states # Local states for auth views
+│ │ └───widgets # Reusable auth-specific widgets
+│ │
+│ ├───dashboard # Main app dashboard (post-login)
+│ │ │ dashboard_routes.dart
+│ │ │
+│ │ ├───bindings # Bindings for dashboard/rates
+│ │ ├───controllers # Logic for dashboard and rates modules
+│ │ ├───editors # Data or form editors for dashboard/rates
+│ │ ├───models # Crypto & gift card models
+│ │ ├───screens # UI for Dashboard and Rates
+│ │ ├───services # API service to fetch crypto/rates data
+│ │ ├───states # Dashboard and rates-specific states
+│ │ └───widgets # Dashboard widgets (banner, balance, rates)
+│ │
+│ └───guest # Handles non-authenticated views
+│ │ guest_routes.dart
+│ │
+│ ├───bindings # Bindings for onboarding and splash
+│ ├───controllers # Handles onboarding and splash logic
+│ ├───models # Slide model for onboarding
+│ ├───screens # Onboarding, Splash, and 404 screens
+│ ├───states # State management for guest screens
+│ └───widgets # Reusable guest widgets
+│
+├───services
+│ # Global app-wide services (if any)
+│
+├───translations
+│ # Multilingual support files (if applicable)
+│
+├───utils
+│ dio_util.dart # Network configuration (Dio client)
+│ flex_util.dart # Responsive UI utilities
+│ global_util.dart # Global helper functions
+│ keyboard_util.dart # Keyboard management helpers
+│ notification_util.dart # Push/local notification utils
+│ screen_util.dart # Screen size and device utilities
+│ session_util.dart # Session and storage helpers
+│ validator_ext_util.dart # Extended validation helpers
+│ validator_util.dart # Core validation utilities
+│
+└───widgets
+annotated_region_widget.dart
+app_bar_widget.dart
+bottom_navigation_bar_widget.dart
+dismiss_keyboard_widget.dart
+```
