@@ -84,3 +84,23 @@ app_bar_widget.dart
 bottom_navigation_bar_widget.dart
 dismiss_keyboard_widget.dart
 ```
+
+
+## ⚙️ Features
+
+- Modular architecture for scalability
+- Clean folder structure with clear separation of concerns
+- Custom utility and widget libraries
+- Configurable routing and theming
+- Organized state, controller, and binding patterns  
+
+---
+
+## ⚙️ Download
+
+You can download the latest release of the **Pgold Flutter App** below:
+
+- 📱 **[Download APK – v1.0.0+1](https://github.com/geomartins/pgold-app/releases/tag/v1.0.0%2B1)**  
+  *(Hosted on my GitHub Releases page)*
+
+---
